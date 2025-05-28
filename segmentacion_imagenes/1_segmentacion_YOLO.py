@@ -24,8 +24,8 @@ while cap.isOpened():
     # Perform segmentation
     results = model(
         frame,
-        #conf=0.7,
-        #classes=[0]
+        conf=0.7, # Confidence threshold
+        classes=[0] # Specify the classes to detect, e.g., [0] for person, [1] for bicycle, etc.
         )
 
     latency = (time.time()- start_time) * 1000  # Convert to milliseconds
